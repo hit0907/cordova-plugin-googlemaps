@@ -26,7 +26,6 @@
 
     //self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:self.webView.frame];
     CGRect viewBounds = [self.webView bounds];
-    viewBounds.origin.y -= 20;
     viewBounds.size.height = viewBounds.size.height + 20;
     self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:viewBounds];
 
