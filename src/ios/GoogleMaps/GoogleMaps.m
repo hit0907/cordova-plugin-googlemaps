@@ -24,7 +24,12 @@
     //[self versionCheck];
 
 
-    self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:self.webView.frame];
+    //self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:self.webView.frame];
+    CGRect viewBounds = [self.webView bounds];
+    viewBounds.origin.y -= 20;
+    viewBounds.size.height = viewBounds.size.height + 20;
+    self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:viewBounds];
+
     self.pluginLayer.backgroundColor = [UIColor whiteColor];
     self.pluginLayer.webView = self.webView;
     self.pluginLayer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
